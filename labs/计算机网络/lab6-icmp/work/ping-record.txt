@@ -1,0 +1,13 @@
+
+➜ ping www5.baidu.com
+
+Pinging www5.a.shifen.com [110.242.68.3] with 32 bytes of data:
+Reply from 110.242.68.3: bytes=32 time=112ms TTL=52
+Reply from 110.242.68.3: bytes=32 time=19ms TTL=52
+Reply from 110.242.68.3: bytes=32 time=23ms TTL=52
+Reply from 110.242.68.3: bytes=32 time=13ms TTL=52
+
+Ping statistics for 110.242.68.3:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 13ms, Maximum = 112ms, Average = 41ms

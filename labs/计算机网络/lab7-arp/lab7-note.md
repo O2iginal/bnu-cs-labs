@@ -1,0 +1,2 @@
+- 注意使用wifi网络时，使用ipconfig查看本机ip地址，结果应是WireLess LAN adapter的ip地址，而不是Ethernet adapter的ip地址。
+- 

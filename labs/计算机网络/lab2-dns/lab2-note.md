@@ -1,0 +1,10 @@
+- dig安装
+  - 使用linux(WSL)下的dig
+  - Windows下按章 isc 的 bind 套件，其中包含 dig（可使用 scoop 安装）
+- dig使用
+  - 注意：Windows Terminal将@字符做特殊解析，使得不能正常使用dig查询命令；
+    - 建议改为使用朴素的cmd命令行；
+    - 或者使用Linux下的dig进行实验。
+- 根dns服务器ip地址获取
+  - 执行命令`nslookup -type=ns .`可查询13个根dns服务器的域名和ip地址；
+- 

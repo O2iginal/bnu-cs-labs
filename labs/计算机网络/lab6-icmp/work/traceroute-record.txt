@@ -1,0 +1,19 @@
+
+➜ tracert www5.baidu.com
+
+Tracing route to www5.a.shifen.com [110.242.68.3]
+over a maximum of 30 hops:
+
+  1     *        *        *     Request timed out.
+  2     9 ms     8 ms     5 ms  172.19.251.13
+  3     9 ms     6 ms     5 ms  172.16.201.66
+  4     8 ms     5 ms    70 ms  61.49.176.89
+  5     *        *        *     Request timed out.
+  6    27 ms    10 ms    28 ms  124.65.194.33
+  7     *        *        *     Request timed out.
+  8    21 ms    14 ms    56 ms  110.242.66.178
+  9    45 ms    47 ms    15 ms  221.194.45.134
+ 10     *        *        *     Request timed out.
+ 11     *        *        *     Request timed out.
+ 12     *        *        *     Request timed out.
+ 13    16 ms    12 ms    12 ms  110.242.68.3

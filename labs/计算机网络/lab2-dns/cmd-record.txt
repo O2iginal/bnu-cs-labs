@@ -1,0 +1,183 @@
+
+C:\Users\23692>dig
+
+; <<>> DiG 9.16.44 <<>>
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 63765
+;; flags: qr rd ra; QUERY: 1, ANSWER: 13, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+; COOKIE: 6ff84f5d9989e381497e811d6552c6c3a80a4121dbc5b26e (good)
+;; QUESTION SECTION:
+;.                              IN      NS
+
+;; ANSWER SECTION:
+.                       458996  IN      NS      a.root-servers.net.
+.                       458996  IN      NS      b.root-servers.net.
+.                       458996  IN      NS      i.root-servers.net.
+.                       458996  IN      NS      e.root-servers.net.
+.                       458996  IN      NS      g.root-servers.net.
+.                       458996  IN      NS      h.root-servers.net.
+.                       458996  IN      NS      c.root-servers.net.
+.                       458996  IN      NS      m.root-servers.net.
+.                       458996  IN      NS      f.root-servers.net.
+.                       458996  IN      NS      l.root-servers.net.
+.                       458996  IN      NS      j.root-servers.net.
+.                       458996  IN      NS      d.root-servers.net.
+.                       458996  IN      NS      k.root-servers.net.
+
+;; Query time: 7 msec
+;; SERVER: 172.16.213.102#53(172.16.213.102)
+;; WHEN: Tue Nov 14 09:00:52 China Standard Time 2023
+;; MSG SIZE  rcvd: 267
+
+
+C:\Users\23692>nslookup m.root-servers.net.
+Server:  UnKnown
+Address:  172.16.213.102
+
+Non-authoritative answer:
+Name:    m.root-servers.net
+Addresses:  2001:dc3::35
+          202.12.27.33
+
+
+C:\Users\23692>
+C:\Users\23692>
+C:\Users\23692>
+C:\Users\23692>
+C:\Users\23692>202.12.27.33
+C:\Users\23692>dig @202.12.27.33 www.bnu.edu.cn
+
+; <<>> DiG 9.16.44 <<>> @202.12.27.33 www.bnu.edu.cn
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 54756
+;; flags: qr rd; QUERY: 1, ANSWER: 0, AUTHORITY: 6, ADDITIONAL: 12
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; QUESTION SECTION:
+;www.bnu.edu.cn.                        IN      A
+
+;; AUTHORITY SECTION:
+cn.                     172800  IN      NS      b.dns.cn.
+cn.                     172800  IN      NS      a.dns.cn.
+cn.                     172800  IN      NS      d.dns.cn.
+cn.                     172800  IN      NS      e.dns.cn.
+cn.                     172800  IN      NS      ns.cernet.net.
+cn.                     172800  IN      NS      c.dns.cn.
+
+;; ADDITIONAL SECTION:
+ns.cernet.net.          172800  IN      A       202.112.0.44
+e.dns.cn.               172800  IN      A       203.119.29.1
+d.dns.cn.               172800  IN      A       203.119.28.1
+c.dns.cn.               172800  IN      A       203.119.27.1
+b.dns.cn.               172800  IN      A       203.119.26.1
+a.dns.cn.               172800  IN      A       203.119.25.1
+e.dns.cn.               172800  IN      AAAA    2001:dc7:3::1
+d.dns.cn.               172800  IN      AAAA    2001:dc7:1000::1
+c.dns.cn.               172800  IN      AAAA    2001:dc7:2::1
+b.dns.cn.               172800  IN      AAAA    2001:dc7:1::1
+a.dns.cn.               172800  IN      AAAA    2001:dc7::1
+
+;; Query time: 134 msec
+;; SERVER: 202.12.27.33#53(202.12.27.33)
+;; WHEN: Tue Nov 14 09:02:05 China Standard Time 2023
+;; MSG SIZE  rcvd: 394
+
+
+C:\Users\23692>dig @2001:dc7::1 www.bnu.edu.cn
+
+; <<>> DiG 9.16.44 <<>> @2001:dc7::1 www.bnu.edu.cn
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 47672
+;; flags: qr rd; QUERY: 1, ANSWER: 0, AUTHORITY: 5, ADDITIONAL: 5
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;www.bnu.edu.cn.                        IN      A
+
+;; AUTHORITY SECTION:
+edu.cn.                 172800  IN      NS      dns.edu.cn.
+edu.cn.                 172800  IN      NS      ns2.cuhk.hk.
+edu.cn.                 172800  IN      NS      ns2.cernet.net.
+edu.cn.                 172800  IN      NS      dns2.edu.cn.
+edu.cn.                 172800  IN      NS      deneb.dfn.de.
+
+;; ADDITIONAL SECTION:
+dns.edu.cn.             172800  IN      A       202.38.109.35
+dns.edu.cn.             172800  IN      AAAA    2001:250:c006::35
+dns2.edu.cn.            172800  IN      A       202.112.0.13
+dns2.edu.cn.            172800  IN      AAAA    2001:da8:1:100::13
+
+;; Query time: 6 msec
+;; SERVER: 2001:dc7::1#53(2001:dc7::1)
+;; WHEN: Tue Nov 14 09:02:27 China Standard Time 2023
+;; MSG SIZE  rcvd: 259
+
+
+C:\Users\23692>dig @2001:250:c006::35 www.bnu.edu.cn
+
+; <<>> DiG 9.16.44 <<>> @2001:250:c006::35 www.bnu.edu.cn
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 47323
+;; flags: qr rd; QUERY: 1, ANSWER: 0, AUTHORITY: 2, ADDITIONAL: 4
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+; COOKIE: 2fc2e3ea92eed5ce72b0b9a26552c733f1b42c93a8d7501a (good)
+;; QUESTION SECTION:
+;www.bnu.edu.cn.                        IN      A
+
+;; AUTHORITY SECTION:
+bnu.edu.cn.             172800  IN      NS      ns.bnu.edu.cn.
+bnu.edu.cn.             172800  IN      NS      ns2.bnu.edu.cn.
+
+;; ADDITIONAL SECTION:
+ns2.bnu.edu.cn.         172800  IN      AAAA    2001:da8:207:e182::168
+ns2.bnu.edu.cn.         172800  IN      A       202.112.80.168
+ns.bnu.edu.cn.          172800  IN      A       202.112.80.106
+
+;; Query time: 7 msec
+;; SERVER: 2001:250:c006::35#53(2001:250:c006::35)
+;; WHEN: Tue Nov 14 09:02:43 China Standard Time 2023
+;; MSG SIZE  rcvd: 166
+
+
+C:\Users\23692>dig @2001:da8:207:e182::168 www.bnu.edu.cn
+
+; <<>> DiG 9.16.44 <<>> @2001:da8:207:e182::168 www.bnu.edu.cn
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 33437
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+; COOKIE: 49754cd06d62d061d0ecb05d6552c7410be5207a06021194 (good)
+;; QUESTION SECTION:
+;www.bnu.edu.cn.                        IN      A
+
+;; ANSWER SECTION:
+www.bnu.edu.cn.         7200    IN      A       60.247.18.7
+
+;; Query time: 6 msec
+;; SERVER: 2001:da8:207:e182::168#53(2001:da8:207:e182::168)
+;; WHEN: Tue Nov 14 09:02:58 China Standard Time 2023
+;; MSG SIZE  rcvd: 87
+
+
+C:\Users\23692>

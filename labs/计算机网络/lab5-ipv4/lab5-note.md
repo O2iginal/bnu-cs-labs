@@ -1,0 +1,7 @@
+- 注意不要使用文档中的url `http://www.uwa.edu.au/ `
+  - 是ipv6，ip层没有checksum
+  - 端口为443而不是80
+- 也不要使用百度，因百度默认IPv6，而IPv6没有checksum
+  - 可使用`wget http://www.baidu.com/ --inet4-only`强制使用IPv4
+- 本次实验使用
+  - `wget http://csapp.cs.cmu.edu/`
