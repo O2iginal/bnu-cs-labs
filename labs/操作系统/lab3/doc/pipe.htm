@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/experiment.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>无标题文档</title>
+<style type="text/css">
+<!-- 
+
+body {
+	background-image: url();
+}
+.重点1 {
+	font-style: italic;
+	font-weight: bold;
+	color: #0000FF;
+	font-size: 14px;
+}
+
+.标题 {
+	font-family: "宋体";
+	font-size: 12px;
+	line-height: 20px;
+	color: #0000FF;
+}
+
+.text {
+	font-family: "宋体";
+	font-size: 14px;
+	line-height: 25px;
+}
+.style1 {font-family: "方正舒体"}
+.style2 {
+	font-family: "方正舒体";
+	font-weight: bold;
+	font-size: 42px;
+	color: #FF0000;
+}
+.style3 {color: #FF0000}
+.style4 {font-family: "宋体"; font-size: 12px; line-height: 20px; color: #FF0000; }
+.style5 {font-family: "宋体"; font-size: 12px; line-height: 20px; color: #FF00FF; }
+.style8 {font-size: 12px}
+.style9 {
+	font-size: 12px;
+	color: #FF0000;
+	font-family: "Times New Roman", Times, serif;
+}
+.style21 {font-family: "宋体"; font-size: 14px; line-height: 25px; font-style: italic; }
+.style22 {color: #0000FF; font-size: 14px; font-weight: bold;}
+.style24 {font-family: "宋体"; font-size: 14px; line-height: 25px; color: #000000; }
+.style25 {font-size: 14px; color: #0000FF;}
+
+-->
+</style>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function MM_timelinePlay(tmLnName, myID) { //v1.2
+  //Copyright 1998, 1999, 2000, 2001, 2002, 2003, 2004 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,propNum,theObj,firstTime=false;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (myID == null) { myID = ++tmLn.ID; firstTime=true;}//if new call, incr ID
+  if (myID == tmLn.ID) { //if Im newest
+    setTimeout('MM_timelinePlay("'+tmLnName+'",'+myID+')',tmLn.delay);
+    fNew = ++tmLn.curFrame;
+    for (i=0; i<tmLn.length; i++) {
+      sprite = tmLn[i];
+      if (sprite.charAt(0) == 's') {
+        if (sprite.obj) {
+          numKeyFr = sprite.keyFrames.length; firstKeyFr = sprite.keyFrames[0];
+          if (fNew >= firstKeyFr && fNew <= sprite.keyFrames[numKeyFr-1]) {//in range
+            keyFrm=1;
+            for (j=0; j<sprite.values.length; j++) {
+              props = sprite.values[j]; 
+              if (numKeyFr != props.length) {
+                if (props.prop2 == null) sprite.obj[props.prop] = props[fNew-firstKeyFr];
+                else        sprite.obj[props.prop2][props.prop] = props[fNew-firstKeyFr];
+              } else {
+                while (keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]) keyFrm++;
+                if (firstTime || fNew==sprite.keyFrames[keyFrm-1]) {
+                  if (props.prop2 == null) sprite.obj[props.prop] = props[keyFrm-1];
+                  else        sprite.obj[props.prop2][props.prop] = props[keyFrm-1];
+        } } } } }
+      } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+      if (fNew > tmLn.lastFrame) tmLn.ID = 0;
+  } }
+}
+
+function MM_timelineGoto(tmLnName, fNew, numGotos) { //v2.0
+  //Copyright 1998, 1999, 2000, 2001, 2002, 2003, 2004 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,lastKeyFr,propNum,theObj;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (numGotos != null)
+    if (tmLn.gotoCount == null) tmLn.gotoCount = 1;
+    else if (tmLn.gotoCount++ >= numGotos) {tmLn.gotoCount=0; return}
+  jmpFwd = (fNew > tmLn.curFrame);
+  for (i = 0; i < tmLn.length; i++) {
+    sprite = (jmpFwd)? tmLn[i] : tmLn[(tmLn.length-1)-i]; //count bkwds if jumping back
+    if (sprite.charAt(0) == "s") {
+      numKeyFr = sprite.keyFrames.length;
+      firstKeyFr = sprite.keyFrames[0];
+      lastKeyFr = sprite.keyFrames[numKeyFr - 1];
+      if ((jmpFwd && fNew<firstKeyFr) || (!jmpFwd && lastKeyFr<fNew)) continue; //skip if untouchd
+      for (keyFrm=1; keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]; keyFrm++);
+      for (j=0; j<sprite.values.length; j++) {
+        props = sprite.values[j];
+        if (numKeyFr == props.length) propNum = keyFrm-1 //keyframes only
+        else propNum = Math.min(Math.max(0,fNew-firstKeyFr),props.length-1); //or keep in legal range
+        if (sprite.obj != null) {
+          if (props.prop2 == null) sprite.obj[props.prop] = props[propNum];
+          else        sprite.obj[props.prop2][props.prop] = props[propNum];
+      } }
+    } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+  }
+  tmLn.curFrame = fNew;
+  if (tmLn.ID == 0) eval('MM_timelinePlay(tmLnName)');
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function MM_initTimelines() { //v4.0
+    //MM_initTimelines() Copyright 1997 Macromedia, Inc. All rights reserved.
+    var ns = navigator.appName == "Netscape";
+    var ns4 = (ns && parseInt(navigator.appVersion) == 4);
+    var ns5 = (ns && parseInt(navigator.appVersion) > 4);
+    document.MM_Time = new Array(1);
+    document.MM_Time[0] = new Array(2);
+    document.MM_Time["Timeline1"] = document.MM_Time[0];
+    document.MM_Time[0].MM_Name = "Timeline1";
+    document.MM_Time[0].fps = 12;
+    document.MM_Time[0][0] = new String("sprite");
+    document.MM_Time[0][0].slot = 1;
+    if (ns4)
+        document.MM_Time[0][0].obj = document["Layer1"];
+    else if (ns5)
+        document.MM_Time[0][0].obj = document.getElementById("Layer1");
+    else
+        document.MM_Time[0][0].obj = document.all ? document.all["Layer1"] : null;
+    document.MM_Time[0][0].keyFrames = new Array(1, 100);
+    document.MM_Time[0][0].values = new Array(3);
+    if (ns5)
+        document.MM_Time[0][0].values[0] = new Array("317px", "323px", "329px", "334px", "340px", "346px", "352px", "358px", "364px", "369px", "375px", "381px", "387px", "393px", "399px", "404px", "410px", "416px", "422px", "428px", "434px", "439px", "445px", "451px", "457px", "463px", "469px", "474px", "480px", "486px", "492px", "498px", "504px", "509px", "515px", "521px", "527px", "533px", "538px", "544px", "550px", "556px", "562px", "568px", "573px", "579px", "585px", "591px", "597px", "603px", "608px", "614px", "620px", "626px", "632px", "638px", "643px", "649px", "655px", "661px", "667px", "673px", "678px", "684px", "690px", "696px", "702px", "707px", "713px", "719px", "725px", "731px", "737px", "742px", "748px", "754px", "760px", "766px", "772px", "777px", "783px", "789px", "795px", "801px", "807px", "812px", "818px", "824px", "830px", "836px", "842px", "847px", "853px", "859px", "865px", "871px", "877px", "882px", "888px", "894px");
+    else
+        document.MM_Time[0][0].values[0] = new Array(317,323,329,334,340,346,352,358,364,369,375,381,387,393,399,404,410,416,422,428,434,439,445,451,457,463,469,474,480,486,492,498,504,509,515,521,527,533,538,544,550,556,562,568,573,579,585,591,597,603,608,614,620,626,632,638,643,649,655,661,667,673,678,684,690,696,702,707,713,719,725,731,737,742,748,754,760,766,772,777,783,789,795,801,807,812,818,824,830,836,842,847,853,859,865,871,877,882,888,894);
+    document.MM_Time[0][0].values[0].prop = "left";
+    if (ns5)
+        document.MM_Time[0][0].values[1] = new Array("136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px");
+    else
+        document.MM_Time[0][0].values[1] = new Array(136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136);
+    document.MM_Time[0][0].values[1].prop = "top";
+    if (!ns4) {
+        document.MM_Time[0][0].values[0].prop2 = "style";
+        document.MM_Time[0][0].values[1].prop2 = "style";
+    }
+    if (ns5)
+        document.MM_Time[0][0].values[2] = new Array("228px", "227px", "227px", "227px", "226px", "226px", "226px", "225px", "225px", "225px", "224px", "224px", "224px", "223px", "223px", "223px", "222px", "222px", "222px", "221px", "221px", "221px", "220px", "220px", "220px", "219px", "219px", "219px", "218px", "218px", "218px", "217px", "217px", "217px", "217px", "216px", "216px", "216px", "215px", "215px", "215px", "214px", "214px", "214px", "213px", "213px", "213px", "212px", "212px", "212px", "211px", "211px", "211px", "210px", "210px", "210px", "209px", "209px", "209px", "208px", "208px", "208px", "207px", "207px", "207px", "206px", "206px", "206px", "206px", "205px", "205px", "205px", "204px", "204px", "204px", "203px", "203px", "203px", "202px", "202px", "202px", "201px", "201px", "201px", "200px", "200px", "200px", "199px", "199px", "199px", "198px", "198px", "198px", "197px", "197px", "197px", "196px", "196px", "196px", "196px");
+    else
+        document.MM_Time[0][0].values[2] = new Array(228,227,227,227,226,226,226,225,225,225,224,224,224,223,223,223,222,222,222,221,221,221,220,220,220,219,219,219,218,218,218,217,217,217,217,216,216,216,215,215,215,214,214,214,213,213,213,212,212,212,211,211,211,210,210,210,209,209,209,208,208,208,207,207,207,206,206,206,206,205,205,205,204,204,204,203,203,203,202,202,202,201,201,201,200,200,200,199,199,199,198,198,198,197,197,197,196,196,196,196);
+    document.MM_Time[0][0].values[2].prop = "width";
+    if (!ns4)
+        document.MM_Time[0][0].values[2].prop2 = "style";
+    document.MM_Time[0][1] = new String("behavior");
+    document.MM_Time[0][1].frame = 61;
+    document.MM_Time[0][1].value = "MM_timelineGoto('Timeline1','1')";
+    document.MM_Time[0].lastFrame = 100;
+    for (i=0; i<document.MM_Time.length; i++) {
+        document.MM_Time[i].ID = null;
+        document.MM_Time[i].curFrame = 0;
+        document.MM_Time[i].delay = 1000/document.MM_Time[i].fps;
+    }
+}
+//-->
+</script>
+</head>
+
+<body onLoad="MM_timelinePlay('Timeline1');MM_preloadImages('../images/dh2_1.gif','../images/dh2_2.gif','../images/dh2_3.gif','../images/dh2_4.gif','../images/dh2_5.gif')">
+<div id="Layer1" class="style5" style="position:absolute; left:317px; top:136px; width:228px; height:18px; z-index:1">欢迎访问“计算机操作系统”网站</div>
+<table width="760" height="90" border="0" align="center" cellpadding="0" cellspacing="0" background="../c/temp/line.gif">
+  <tr>
+    <td width="800" height="90" background="../images/logo1.gif"><div align="center" class="style1">
+      <div align="left" class="style2">计算机操作系统<a name="top"></a></div>
+    </div></td>
+  </tr>
+</table>
+<table width="760" height="24" border="0" align="center" cellpadding="1" cellspacing="0" bordercolor="#00CCFF">
+  <tr bordercolor="#FFFFFF">
+    <td><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../images/dh2_1.gif',1)"><img src="../images/dh1_1.gif" alt="首页" name="Image4" width="149" height="23" border="0"></a></td>
+    <td><a href="../course/index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../images/dh2_2.gif',1)"><img src="../images/dh1_2.gif" alt="网页制作" name="Image5" width="151" height="23" border="0"></a></td>
+    <td><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../images/dh2_3.gif',1)"><img src="../images/dh1_3.gif" alt="动画制作" name="Image6" width="151" height="23" border="0"></a></td>
+    <td><a href="../ftp/index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../images/dh2_4.gif',1)"><img src="../images/dh1_4.gif" alt="Active Server Page" name="Image7" width="151" height="23" border="0"></a></td>
+    <td><a href="../bbs/index.asp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image8','','../images/dh2_5.gif',1)"><img src="../images/dh1_5.gif" alt="论坛" name="Image8" width="151" height="23" border="0"></a></td>
+  </tr>
+</table>
+<table width="760" height="24" border="0" align="center" cellpadding="1" cellspacing="0" background="../c/temp/line.gif">
+  <tr bgcolor="#D3E7FF">
+    <td height="24" class="style4">当前位置：上机实验</td>
+  </tr>
+</table>
+<table width="760" border="0" align="center" background="../images/line.gif">
+  <tr>
+    <td width="24" height="143" valign="top" bordercolor="#0000FF"><p>&nbsp;</p>    </td>
+    <td width="726" valign="top"><!-- InstanceBeginEditable name="EditRegion1" -->
+          <div align="left" class="text">
+            <div align="center" class="style3"><strong>管道</strong> </div>
+      </div>
+      
+          <p class="text">&nbsp;&nbsp;&nbsp; 在传统的实现中，管道是单向的、先入先出的、无结构的、固定大小的数据流。写进程在管道的尾端写入数据，读进程从管道的首端读出数据。数据读出后，将从管道移走，其他读进程都不能再读到这些数据。管道提供了简单的流控制机制。进程试图读空管道时，在有数据写入管道前，进程一直阻塞。同样，管道已经满时，进程想写入数据，在其他进程从管道中读走数据（也就是移去数据）之前，这个写进程将发生阻塞。 </p>
+      <p class="text">&nbsp;&nbsp;&nbsp; 系统调用pipe 生成一个管道并返回两个描述符，一个用来读管道，一个用来写管道。这些描述符为子进程所继承，因此它们可以共享访问文件。通过这种方式，每个管道可以有许多读进程和写进程。给定的进程可以是读进程也可以是写进程，或者两者都有。然而，通常管道被两个进程共享，每个进程拥有管道的一端。对管道的I/O操作和对文件的I/O操作非常相似，通过对管道的描述符调用write(fd[1],buf,size)和read(fd[0],buf,size)系统调用来操作。进程通常不知道它正在读或写的实际上是一个管道。最普通的管道应用就是让一个程序的输出变为另一个程序的输入。用户通常使用shell的管道操作符‘|’来连接两个程序。</p>
+            <p class="text">&nbsp;&nbsp;&nbsp;&nbsp; 从进程间通信的角度看，管道提供了从一个进程向另一个进程传输数据的有效方法。但是，管道有一些固有的局限性：由于读数据的同时也将数据从管道移去，因此管道不能用来对多个接受者广播数据；管道中的数据被当做是字节流，因此如果写进程发送不同长度的数据对象通过管道，那么读进程不能确定发送了多少个对象，或是它不能确定对象的边界；如果一个管道有多个读进程，那么写进程不能发送数据到指定的读进程。同样，如果有多个写进程，那么没有方法判别是它们中的哪一个发送的数据。 </p>
+            <p align="center" class="text"><a href="#top"></a><a href="#top"></a><a href="linux_3.htm"><img src="../images/Prev.gif" width="60" height="20" border="0"></a>&nbsp; <a href="#top"><img src="../images/GoTop.gif" width="60" height="20" border="0"></a>&nbsp; <a href="msg.htm"><img src="../images/Next.gif" width="60" height="20" border="0"></a> </p>
+    <!-- InstanceEndEditable --></td>
+  </tr>
+  <tr>
+    <td height="92" colspan="2" valign="top">      <hr width="750" size="1" noshade class="style3">      
+      <p align="center" class="style9">Email:<a href="mailto:rong_xiao@sina.com">rong_xiao@sina.com</a></p>
+    <p align="center" class="style21 style8 style3">建议分辨率：800*600</p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+<!-- InstanceEnd --></html>

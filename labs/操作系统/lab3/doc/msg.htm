@@ -1,0 +1,321 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/experiment.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>无标题文档</title>
+<style type="text/css">
+<!--  
+
+body {
+	background-image: url();
+}
+.重点1 {
+	font-style: italic;
+	font-weight: bold;
+	color: #0000FF;
+	font-size: 14px;
+}
+
+.标题 {
+	font-family: "宋体";
+	font-size: 12px;
+	line-height: 20px;
+	color: #0000FF;
+}
+
+.text {
+	font-family: "宋体";
+	font-size: 14px;
+	line-height: 25px;
+}
+.style1 {font-family: "方正舒体"}
+.style2 {
+	font-family: "方正舒体";
+	font-weight: bold;
+	font-size: 42px;
+	color: #FF0000;
+}
+.style3 {color: #FF0000}
+.style4 {font-family: "宋体"; font-size: 12px; line-height: 20px; color: #FF0000; }
+.style5 {font-family: "宋体"; font-size: 12px; line-height: 20px; color: #FF00FF; }
+.style8 {font-size: 12px}
+.style9 {
+	font-size: 12px;
+	color: #FF0000;
+	font-family: "Times New Roman", Times, serif;
+}
+.style21 {font-family: "宋体"; font-size: 14px; line-height: 25px; font-style: italic; }
+.style22 {color: #0000FF; font-size: 14px; font-weight: bold;}
+.style24 {font-family: "宋体"; font-size: 14px; line-height: 25px; color: #000000; }
+.style25 {font-size: 14px; color: #0000FF;}
+
+-->
+</style>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function MM_timelinePlay(tmLnName, myID) { //v1.2
+  //Copyright 1998, 1999, 2000, 2001, 2002, 2003, 2004 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,propNum,theObj,firstTime=false;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (myID == null) { myID = ++tmLn.ID; firstTime=true;}//if new call, incr ID
+  if (myID == tmLn.ID) { //if Im newest
+    setTimeout('MM_timelinePlay("'+tmLnName+'",'+myID+')',tmLn.delay);
+    fNew = ++tmLn.curFrame;
+    for (i=0; i<tmLn.length; i++) {
+      sprite = tmLn[i];
+      if (sprite.charAt(0) == 's') {
+        if (sprite.obj) {
+          numKeyFr = sprite.keyFrames.length; firstKeyFr = sprite.keyFrames[0];
+          if (fNew >= firstKeyFr && fNew <= sprite.keyFrames[numKeyFr-1]) {//in range
+            keyFrm=1;
+            for (j=0; j<sprite.values.length; j++) {
+              props = sprite.values[j]; 
+              if (numKeyFr != props.length) {
+                if (props.prop2 == null) sprite.obj[props.prop] = props[fNew-firstKeyFr];
+                else        sprite.obj[props.prop2][props.prop] = props[fNew-firstKeyFr];
+              } else {
+                while (keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]) keyFrm++;
+                if (firstTime || fNew==sprite.keyFrames[keyFrm-1]) {
+                  if (props.prop2 == null) sprite.obj[props.prop] = props[keyFrm-1];
+                  else        sprite.obj[props.prop2][props.prop] = props[keyFrm-1];
+        } } } } }
+      } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+      if (fNew > tmLn.lastFrame) tmLn.ID = 0;
+  } }
+}
+
+function MM_timelineGoto(tmLnName, fNew, numGotos) { //v2.0
+  //Copyright 1998, 1999, 2000, 2001, 2002, 2003, 2004 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,lastKeyFr,propNum,theObj;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (numGotos != null)
+    if (tmLn.gotoCount == null) tmLn.gotoCount = 1;
+    else if (tmLn.gotoCount++ >= numGotos) {tmLn.gotoCount=0; return}
+  jmpFwd = (fNew > tmLn.curFrame);
+  for (i = 0; i < tmLn.length; i++) {
+    sprite = (jmpFwd)? tmLn[i] : tmLn[(tmLn.length-1)-i]; //count bkwds if jumping back
+    if (sprite.charAt(0) == "s") {
+      numKeyFr = sprite.keyFrames.length;
+      firstKeyFr = sprite.keyFrames[0];
+      lastKeyFr = sprite.keyFrames[numKeyFr - 1];
+      if ((jmpFwd && fNew<firstKeyFr) || (!jmpFwd && lastKeyFr<fNew)) continue; //skip if untouchd
+      for (keyFrm=1; keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]; keyFrm++);
+      for (j=0; j<sprite.values.length; j++) {
+        props = sprite.values[j];
+        if (numKeyFr == props.length) propNum = keyFrm-1 //keyframes only
+        else propNum = Math.min(Math.max(0,fNew-firstKeyFr),props.length-1); //or keep in legal range
+        if (sprite.obj != null) {
+          if (props.prop2 == null) sprite.obj[props.prop] = props[propNum];
+          else        sprite.obj[props.prop2][props.prop] = props[propNum];
+      } }
+    } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+  }
+  tmLn.curFrame = fNew;
+  if (tmLn.ID == 0) eval('MM_timelinePlay(tmLnName)');
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function MM_initTimelines() { //v4.0
+    //MM_initTimelines() Copyright 1997 Macromedia, Inc. All rights reserved.
+    var ns = navigator.appName == "Netscape";
+    var ns4 = (ns && parseInt(navigator.appVersion) == 4);
+    var ns5 = (ns && parseInt(navigator.appVersion) > 4);
+    document.MM_Time = new Array(1);
+    document.MM_Time[0] = new Array(2);
+    document.MM_Time["Timeline1"] = document.MM_Time[0];
+    document.MM_Time[0].MM_Name = "Timeline1";
+    document.MM_Time[0].fps = 12;
+    document.MM_Time[0][0] = new String("sprite");
+    document.MM_Time[0][0].slot = 1;
+    if (ns4)
+        document.MM_Time[0][0].obj = document["Layer1"];
+    else if (ns5)
+        document.MM_Time[0][0].obj = document.getElementById("Layer1");
+    else
+        document.MM_Time[0][0].obj = document.all ? document.all["Layer1"] : null;
+    document.MM_Time[0][0].keyFrames = new Array(1, 100);
+    document.MM_Time[0][0].values = new Array(3);
+    if (ns5)
+        document.MM_Time[0][0].values[0] = new Array("317px", "323px", "329px", "334px", "340px", "346px", "352px", "358px", "364px", "369px", "375px", "381px", "387px", "393px", "399px", "404px", "410px", "416px", "422px", "428px", "434px", "439px", "445px", "451px", "457px", "463px", "469px", "474px", "480px", "486px", "492px", "498px", "504px", "509px", "515px", "521px", "527px", "533px", "538px", "544px", "550px", "556px", "562px", "568px", "573px", "579px", "585px", "591px", "597px", "603px", "608px", "614px", "620px", "626px", "632px", "638px", "643px", "649px", "655px", "661px", "667px", "673px", "678px", "684px", "690px", "696px", "702px", "707px", "713px", "719px", "725px", "731px", "737px", "742px", "748px", "754px", "760px", "766px", "772px", "777px", "783px", "789px", "795px", "801px", "807px", "812px", "818px", "824px", "830px", "836px", "842px", "847px", "853px", "859px", "865px", "871px", "877px", "882px", "888px", "894px");
+    else
+        document.MM_Time[0][0].values[0] = new Array(317,323,329,334,340,346,352,358,364,369,375,381,387,393,399,404,410,416,422,428,434,439,445,451,457,463,469,474,480,486,492,498,504,509,515,521,527,533,538,544,550,556,562,568,573,579,585,591,597,603,608,614,620,626,632,638,643,649,655,661,667,673,678,684,690,696,702,707,713,719,725,731,737,742,748,754,760,766,772,777,783,789,795,801,807,812,818,824,830,836,842,847,853,859,865,871,877,882,888,894);
+    document.MM_Time[0][0].values[0].prop = "left";
+    if (ns5)
+        document.MM_Time[0][0].values[1] = new Array("136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px");
+    else
+        document.MM_Time[0][0].values[1] = new Array(136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136);
+    document.MM_Time[0][0].values[1].prop = "top";
+    if (!ns4) {
+        document.MM_Time[0][0].values[0].prop2 = "style";
+        document.MM_Time[0][0].values[1].prop2 = "style";
+    }
+    if (ns5)
+        document.MM_Time[0][0].values[2] = new Array("228px", "227px", "227px", "227px", "226px", "226px", "226px", "225px", "225px", "225px", "224px", "224px", "224px", "223px", "223px", "223px", "222px", "222px", "222px", "221px", "221px", "221px", "220px", "220px", "220px", "219px", "219px", "219px", "218px", "218px", "218px", "217px", "217px", "217px", "217px", "216px", "216px", "216px", "215px", "215px", "215px", "214px", "214px", "214px", "213px", "213px", "213px", "212px", "212px", "212px", "211px", "211px", "211px", "210px", "210px", "210px", "209px", "209px", "209px", "208px", "208px", "208px", "207px", "207px", "207px", "206px", "206px", "206px", "206px", "205px", "205px", "205px", "204px", "204px", "204px", "203px", "203px", "203px", "202px", "202px", "202px", "201px", "201px", "201px", "200px", "200px", "200px", "199px", "199px", "199px", "198px", "198px", "198px", "197px", "197px", "197px", "196px", "196px", "196px", "196px");
+    else
+        document.MM_Time[0][0].values[2] = new Array(228,227,227,227,226,226,226,225,225,225,224,224,224,223,223,223,222,222,222,221,221,221,220,220,220,219,219,219,218,218,218,217,217,217,217,216,216,216,215,215,215,214,214,214,213,213,213,212,212,212,211,211,211,210,210,210,209,209,209,208,208,208,207,207,207,206,206,206,206,205,205,205,204,204,204,203,203,203,202,202,202,201,201,201,200,200,200,199,199,199,198,198,198,197,197,197,196,196,196,196);
+    document.MM_Time[0][0].values[2].prop = "width";
+    if (!ns4)
+        document.MM_Time[0][0].values[2].prop2 = "style";
+    document.MM_Time[0][1] = new String("behavior");
+    document.MM_Time[0][1].frame = 61;
+    document.MM_Time[0][1].value = "MM_timelineGoto('Timeline1','1')";
+    document.MM_Time[0].lastFrame = 100;
+    for (i=0; i<document.MM_Time.length; i++) {
+        document.MM_Time[i].ID = null;
+        document.MM_Time[i].curFrame = 0;
+        document.MM_Time[i].delay = 1000/document.MM_Time[i].fps;
+    }
+}
+//-->
+</script>
+</head>
+
+<body onLoad="MM_timelinePlay('Timeline1');MM_preloadImages('../images/dh2_1.gif','../images/dh2_2.gif','../images/dh2_3.gif','../images/dh2_4.gif','../images/dh2_5.gif')">
+<div id="Layer1" class="style5" style="position:absolute; left:317px; top:136px; width:228px; height:18px; z-index:1">欢迎访问“计算机操作系统”网站</div>
+<table width="760" height="90" border="0" align="center" cellpadding="0" cellspacing="0" background="../c/temp/line.gif">
+  <tr>
+    <td width="800" height="90" background="../images/logo1.gif"><div align="center" class="style1">
+      <div align="left" class="style2">计算机操作系统<a name="top"></a></div>
+    </div></td>
+  </tr>
+</table>
+<table width="760" height="24" border="0" align="center" cellpadding="1" cellspacing="0" bordercolor="#00CCFF">
+  <tr bordercolor="#FFFFFF">
+    <td><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','../images/dh2_1.gif',1)"><img src="../images/dh1_1.gif" alt="首页" name="Image4" width="149" height="23" border="0"></a></td>
+    <td><a href="../course/index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','../images/dh2_2.gif',1)"><img src="../images/dh1_2.gif" alt="网页制作" name="Image5" width="151" height="23" border="0"></a></td>
+    <td><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../images/dh2_3.gif',1)"><img src="../images/dh1_3.gif" alt="动画制作" name="Image6" width="151" height="23" border="0"></a></td>
+    <td><a href="../ftp/index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../images/dh2_4.gif',1)"><img src="../images/dh1_4.gif" alt="Active Server Page" name="Image7" width="151" height="23" border="0"></a></td>
+    <td><a href="../bbs/index.asp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image8','','../images/dh2_5.gif',1)"><img src="../images/dh1_5.gif" alt="论坛" name="Image8" width="151" height="23" border="0"></a></td>
+  </tr>
+</table>
+<table width="760" height="24" border="0" align="center" cellpadding="1" cellspacing="0" background="../c/temp/line.gif">
+  <tr bgcolor="#D3E7FF">
+    <td height="24" class="style4">当前位置：上机实验</td>
+  </tr>
+</table>
+<table width="760" border="0" align="center" background="../images/line.gif">
+  <tr>
+    <td width="24" height="143" valign="top" bordercolor="#0000FF"><p>&nbsp;</p>    </td>
+    <td width="726" valign="top"><!-- InstanceBeginEditable name="EditRegion1" -->
+      <div align="center"><span class="text style3"><strong>消息队列</strong>
+        </span>
+      </div>
+      <p class="text">&nbsp;&nbsp;&nbsp; 通俗的讲，消息队列就是指以队列的形式存储一系列相关信息，在这些信息的存、取过程中实现进程间的通信。在unix中，消息队列机制中，主要有以下几个函数： <br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; msgget () 、 msgsnd () 、 msgrcv () 、msgctl ()<br>
+    &nbsp;&nbsp;&nbsp; 它们将完成该机制中消息队列的创建、访问和控制，以及消息的发送、接收等一系列操作。下面我们将逐个介绍它们。</p>
+      <p class="text">    <span style="color: #0000FF; font-weight: bold">1、
+      进程通过系统调用msgget()来创建或获得一个消息队列</span>。语法如下：</p>
+      <p class="text">      <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int</strong> msgid=msgget（<strong>key_t</strong> key,<strong>int</strong> flag）</p>
+      <p class="text">&nbsp;&nbsp;&nbsp; 其中，
+
+
+键（<span style="color: #FF00FF"><strong>key</strong></span>）是一个由用户提供的整数，用来标志这个资源的实例。标志<span style="color: #FF00FF; font-weight: bold">flag</span>有IPC_ CREAT和IPC_EXCL。IPC_CREAT表示如果资源不存在就请求内核返回一个资源。IPC_EXCL和IPC_CREAT联合使用表示如果这个资源已经存在的时候，内核返回一个错误。如果没有指定标志位，那么内核就查找有同样键值的已经存在的资源，如果找到了，并且如果调用者具有访问这个资源的权力，内核将返回一个资源ID，在以后的操作中可以使用它快速定位这个资源。<span style="color: #FF00FF; font-weight: bold">msgid</span>是该系统调用返回的描述符；key和flag具有前一节描述的一般的“获取”系统调用的语义。内核将消息存储在每个描述符的链接表（队列）中，并使用msgid作为进入消息队列头标数组的索引。其他的调用可以使用msgid值访问这个消息队列。</p>
+      <p class="text" style="font-weight: bold; color: #0000FF">2、进程使用系统调用msgsnd来发送某个消息：</p>
+      <p class="text"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int</strong> msgsnd（<strong>int</strong> msgid, <strong>const void *</strong>msgp, <strong>size_t </strong>count, <strong>int</strong> flag）</p>
+      <p class="text">&nbsp;&nbsp;&nbsp; 其中<span style="color: #FF00FF; font-weight: bold">msgp</span>指向消息缓冲区（包括一个跟随数据区域的类型域），<span style="color: #FF00FF; font-weight: bold">count</span>是消息中全部字节的数目（包括类型域）。最需注意的参数<span style="color: #FF00FF; font-weight: bold">flag</span>有两种可选设置：使用标志位IPC_NOWAIT，发送消息时阻塞（如果队列已满，队列中没有一个存放新消息的可用空间），该函数将马上返回；相反，使用标志位0则会发生发送消息等待。</p>
+      <p class="text">系统调用msgsnd的内部执行过程如下：</p>
+      <p class="text"><strong>算法1</strong>/* 发送消息 */</p>
+      <p class="text" style="color: #FF00FF; font-style: italic"><span style="font-weight: bold">输入：</span>1. 消息队列描述符<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. 消息结构地址<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. 消息的大小<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. 标志位</p>
+      <p class="text" style="color: #FF00FF; font-style: italic"><span style="font-weight: bold">输出</span>：所发送的字节数<br>
+      {<br>
+     &nbsp;&nbsp;&nbsp;&nbsp; 检验描述符、许可权的合法性；<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; while（缺少足够大的空间来存贮消息）<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; if （标志位规定不要等待）<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; return;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; sleep（有足够大的空间的事件）；<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;      取消息头部；<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 从用户空间将消息正文读到内核；<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 调整数据结构：消息头部送入队列，<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 消息头部指向数据，<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 修改计数值、时间戳、进程标识号；<br>
+&nbsp;&nbsp;&nbsp;&nbsp;从队列中唤醒正在等待读消息的全部进程；<br>
+}</p>
+      <p class="text" style="color: #0000FF; font-weight: bold">3、进程使用系统调用msgrcv () 来接收某个消息：</p>
+      <p class="text"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t</strong> count=msgrcv(<strong>int </strong>msgqid, <strong>void *</strong>msgp, <strong>size_t</strong> maxcnt, <strong>long</strong> msgtype,<strong>int</strong> flag)</p>
+      <p class="text">&nbsp;&nbsp;&nbsp; 根据队列的概念，可以知道消息在队列中是按照先进先出（即FIFO）的规则来维护。在这里，<span style="color: #FF00FF; font-weight: bold">msgp</span>指向放置到来消息的缓冲区，<span style="color: #FF00FF; font-weight: bold">maxcnt</span>限制了能够被读到的数据的大小。如果到来的数据大于maxcnt规定的字节数，它将被截断。用户必须保证msgp 所指的缓冲区应该能容纳maxcnt个字节。返回值count指出成功读到的字节数目。如果<span style="color: #FF00FF; font-weight: bold">msgtype</span>等于零，msgrcv返回队列中的第一个消息；如果msgtype大于零，msgrcv返回的是msgtype型的第一条消息；如果msgtype小于零，则msgrcv返回的是小于或等于msgtype绝对值的最低类型的第一个消息，例如，倘若一队列中有三个类型分别为5、3、1的消息，而用户请求一个类型为-4的消息，则内核返回的是类型1的消息。在所有的各种情况下，当队列中没有消息能满足接受请求时，内核让进程进入睡眠状态，除非使用了标志IPC_NOWAIT，它规定立即返回。一旦读出，消息将从队列中移去，其他的进程不能再读到了。同样地，如果因为接收的缓冲区太小造成消息被截断，截断的部分将永久地丢失而不给接收者任何提示。在消息队列编程过程中，关于msytype参数的设置是较灵活并且难以控制的一个细节。</p>
+      <p class="text">调用msgrcv的内部执行过程如下：：</p>
+      <p class="text"><strong>算法2 </strong>/* 接收消息 */</p>
+      <p class="text" style="color: #FF00FF; font-style: italic"><span style="font-weight: bold">输入</span>：1. 消息队列描述符<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. 为存放到来的消息的数据缓冲区地址      <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. 数据缓冲区大小      <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. 所请求的消息类型      <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5. 标志位</p>
+      <p class="text" style="color: #FF00FF; font-style: italic"><span style="font-weight: bold">输出</span>：返回消息中的字节数</p>
+      <p class="text" style="font-style: italic; color: #FF00FF">{
+        <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 检验许可权；<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; loop:<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 检验消息描述符的合法性；<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* 寻找返回给用户的消息*/<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if （所请求的消息类型= =0）<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 考虑队列中的第一个消息；<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if （所请求的消息类型&gt;0）<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 考虑队列中给定类型的第一个消息；<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else/* 所请求的消息类型&lt;0 */<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 考虑队列中小于或等于所请求类型的绝对值的所有消息中最低类型的给定类型的第一个消息；<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if （存在一个这样的消息）<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 调整消息大小或若用户给出的大小太小返回错误；<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 从内核拷贝消息类型、消息正文到用户空间；<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 从队列中删除该消息；<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* 不存在这样的消息 */<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if （标志位规定不要睡眠）<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 以错误返回；<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sleep（消息到达队列的事件）；<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; goto loop;<br>
+      }</p>
+      <p class="text"><span style="color: #0000FF; font-weight: bold">4、系统调用msgctl() 来设置和返回与msgqid相关联的参数选择项，以及用来删除消息描述符的选择项</span>：</p>
+      <p>&nbsp;<span class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>        <strong>int</strong> msgctl（<strong>int</strong> msgid, <strong>int</strong> cmd, <strong>struct msqid_ds *</strong>buf）</p>
+      <p class="text">&nbsp;&nbsp;&nbsp; <span style="color: #FF00FF; font-weight: bold">cmd</span>的取值范围为{IPC_ STAT，IPC_SET，IPC_RMID}。其中，IPC_SET表示将指针为buf中的用户id等读入与msgqid相关联的消息队列表项中；IPC_STAT表示将于msgqid相关的消息队列表项中所有当前值读入buf所指的用户结构中；而IPC_RMID则表示msgctl调用删除msgqid所对应的消息队列表项。<span style="color: #FF00FF; font-weight: bold">buf</span> 是用户空间中用于设置或读取消息队列状态的索引结构指针。</p>
+      <p class="text">&nbsp;&nbsp;&nbsp; 进程必须通过带有IPC_RMID命令的msgctl调用来显式地删除消息队列。删除发生时，内核就释放消息队列，同时删除队列中的所有消息。如果这时有读或是写这个消息队列而堵塞的进程，内核将唤醒它们，它们将从调用中返回，并返回一个EIDRM状态（消息ID已经被移去）。 </p>
+      <p align="center" class="text"><a href="#top"></a><a href="#top"></a><a href="pipe.htm"><img src="../images/Prev.gif" width="60" height="20" border="0"></a>&nbsp; <a href="#top"><img src="../images/GoTop.gif" width="60" height="20" border="0"></a>&nbsp; <a href="shm.htm"><img src="../images/Next.gif" width="60" height="20" border="0"></a> </p>
+    <!-- InstanceEndEditable --></td>
+  </tr>
+  <tr>
+    <td height="92" colspan="2" valign="top">      <hr width="750" size="1" noshade class="style3">      
+      <p align="center" class="style9">Email:<a href="mailto:rong_xiao@sina.com">rong_xiao@sina.com</a></p>
+    <p align="center" class="style21 style8 style3">建议分辨率：800*600</p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+<!-- InstanceEnd --></html>

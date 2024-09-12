@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html> 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>无标题文档</title>
+<style type="text/css">
+<!-- 
+
+body {
+	background-image: url();
+}
+.重点1 {
+	font-style: italic;
+	font-weight: bold;
+	color: #0000FF;
+	font-size: 14px;
+}
+
+.标题 {
+	font-family: "宋体";
+	font-size: 12px;
+	line-height: 20px;
+	color: #0000FF;
+}
+
+.text {
+	font-family: "宋体";
+	font-size: 14px;
+	line-height: 25px;
+}
+.style1 {font-family: "方正舒体"}
+.style2 {
+	font-family: "方正舒体";
+	font-weight: bold;
+	font-size: 42px;
+	color: #FF0000;
+}
+.style3 {color: #FF0000}
+.style4 {font-family: "宋体"; font-size: 12px; line-height: 20px; color: #FF0000; }
+.style5 {font-family: "宋体"; font-size: 12px; line-height: 20px; color: #FF00FF; }
+.style8 {font-size: 12px}
+.style9 {
+	font-size: 12px;
+	color: #FF0000;
+	font-family: "Times New Roman", Times, serif;
+}
+.style21 {font-family: "宋体"; font-size: 14px; line-height: 25px; font-style: italic; }
+.style22 {color: #0000FF; font-size: 14px; font-weight: bold;}
+.style24 {font-family: "宋体"; font-size: 14px; line-height: 25px; color: #000000; }
+.style25 {font-size: 14px; color: #0000FF;}
+
+-->
+</style>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function MM_timelinePlay(tmLnName, myID) { //v1.2
+  //Copyright 1998, 1999, 2000, 2001, 2002, 2003, 2004 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,propNum,theObj,firstTime=false;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (myID == null) { myID = ++tmLn.ID; firstTime=true;}//if new call, incr ID
+  if (myID == tmLn.ID) { //if Im newest
+    setTimeout('MM_timelinePlay("'+tmLnName+'",'+myID+')',tmLn.delay);
+    fNew = ++tmLn.curFrame;
+    for (i=0; i<tmLn.length; i++) {
+      sprite = tmLn[i];
+      if (sprite.charAt(0) == 's') {
+        if (sprite.obj) {
+          numKeyFr = sprite.keyFrames.length; firstKeyFr = sprite.keyFrames[0];
+          if (fNew >= firstKeyFr && fNew <= sprite.keyFrames[numKeyFr-1]) {//in range
+            keyFrm=1;
+            for (j=0; j<sprite.values.length; j++) {
+              props = sprite.values[j]; 
+              if (numKeyFr != props.length) {
+                if (props.prop2 == null) sprite.obj[props.prop] = props[fNew-firstKeyFr];
+                else        sprite.obj[props.prop2][props.prop] = props[fNew-firstKeyFr];
+              } else {
+                while (keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]) keyFrm++;
+                if (firstTime || fNew==sprite.keyFrames[keyFrm-1]) {
+                  if (props.prop2 == null) sprite.obj[props.prop] = props[keyFrm-1];
+                  else        sprite.obj[props.prop2][props.prop] = props[keyFrm-1];
+        } } } } }
+      } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+      if (fNew > tmLn.lastFrame) tmLn.ID = 0;
+  } }
+}
+
+function MM_timelineGoto(tmLnName, fNew, numGotos) { //v2.0
+  //Copyright 1998, 1999, 2000, 2001, 2002, 2003, 2004 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,lastKeyFr,propNum,theObj;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (numGotos != null)
+    if (tmLn.gotoCount == null) tmLn.gotoCount = 1;
+    else if (tmLn.gotoCount++ >= numGotos) {tmLn.gotoCount=0; return}
+  jmpFwd = (fNew > tmLn.curFrame);
+  for (i = 0; i < tmLn.length; i++) {
+    sprite = (jmpFwd)? tmLn[i] : tmLn[(tmLn.length-1)-i]; //count bkwds if jumping back
+    if (sprite.charAt(0) == "s") {
+      numKeyFr = sprite.keyFrames.length;
+      firstKeyFr = sprite.keyFrames[0];
+      lastKeyFr = sprite.keyFrames[numKeyFr - 1];
+      if ((jmpFwd && fNew<firstKeyFr) || (!jmpFwd && lastKeyFr<fNew)) continue; //skip if untouchd
+      for (keyFrm=1; keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]; keyFrm++);
+      for (j=0; j<sprite.values.length; j++) {
+        props = sprite.values[j];
+        if (numKeyFr == props.length) propNum = keyFrm-1 //keyframes only
+        else propNum = Math.min(Math.max(0,fNew-firstKeyFr),props.length-1); //or keep in legal range
+        if (sprite.obj != null) {
+          if (props.prop2 == null) sprite.obj[props.prop] = props[propNum];
+          else        sprite.obj[props.prop2][props.prop] = props[propNum];
+      } }
+    } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+  }
+  tmLn.curFrame = fNew;
+  if (tmLn.ID == 0) eval('MM_timelinePlay(tmLnName)');
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_initTimelines() { //v4.0
+    //MM_initTimelines() Copyright 1997 Macromedia, Inc. All rights reserved.
+    var ns = navigator.appName == "Netscape";
+    var ns4 = (ns && parseInt(navigator.appVersion) == 4);
+    var ns5 = (ns && parseInt(navigator.appVersion) > 4);
+    document.MM_Time = new Array(1);
+    document.MM_Time[0] = new Array(2);
+    document.MM_Time["Timeline1"] = document.MM_Time[0];
+    document.MM_Time[0].MM_Name = "Timeline1";
+    document.MM_Time[0].fps = 12;
+    document.MM_Time[0][0] = new String("sprite");
+    document.MM_Time[0][0].slot = 1;
+    if (ns4)
+        document.MM_Time[0][0].obj = document["Layer1"];
+    else if (ns5)
+        document.MM_Time[0][0].obj = document.getElementById("Layer1");
+    else
+        document.MM_Time[0][0].obj = document.all ? document.all["Layer1"] : null;
+    document.MM_Time[0][0].keyFrames = new Array(1, 100);
+    document.MM_Time[0][0].values = new Array(3);
+    if (ns5)
+        document.MM_Time[0][0].values[0] = new Array("317px", "323px", "329px", "334px", "340px", "346px", "352px", "358px", "364px", "369px", "375px", "381px", "387px", "393px", "399px", "404px", "410px", "416px", "422px", "428px", "434px", "439px", "445px", "451px", "457px", "463px", "469px", "474px", "480px", "486px", "492px", "498px", "504px", "509px", "515px", "521px", "527px", "533px", "538px", "544px", "550px", "556px", "562px", "568px", "573px", "579px", "585px", "591px", "597px", "603px", "608px", "614px", "620px", "626px", "632px", "638px", "643px", "649px", "655px", "661px", "667px", "673px", "678px", "684px", "690px", "696px", "702px", "707px", "713px", "719px", "725px", "731px", "737px", "742px", "748px", "754px", "760px", "766px", "772px", "777px", "783px", "789px", "795px", "801px", "807px", "812px", "818px", "824px", "830px", "836px", "842px", "847px", "853px", "859px", "865px", "871px", "877px", "882px", "888px", "894px");
+    else
+        document.MM_Time[0][0].values[0] = new Array(317,323,329,334,340,346,352,358,364,369,375,381,387,393,399,404,410,416,422,428,434,439,445,451,457,463,469,474,480,486,492,498,504,509,515,521,527,533,538,544,550,556,562,568,573,579,585,591,597,603,608,614,620,626,632,638,643,649,655,661,667,673,678,684,690,696,702,707,713,719,725,731,737,742,748,754,760,766,772,777,783,789,795,801,807,812,818,824,830,836,842,847,853,859,865,871,877,882,888,894);
+    document.MM_Time[0][0].values[0].prop = "left";
+    if (ns5)
+        document.MM_Time[0][0].values[1] = new Array("136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px", "136px");
+    else
+        document.MM_Time[0][0].values[1] = new Array(136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136);
+    document.MM_Time[0][0].values[1].prop = "top";
+    if (!ns4) {
+        document.MM_Time[0][0].values[0].prop2 = "style";
+        document.MM_Time[0][0].values[1].prop2 = "style";
+    }
+    if (ns5)
+        document.MM_Time[0][0].values[2] = new Array("228px", "227px", "227px", "227px", "226px", "226px", "226px", "225px", "225px", "225px", "224px", "224px", "224px", "223px", "223px", "223px", "222px", "222px", "222px", "221px", "221px", "221px", "220px", "220px", "220px", "219px", "219px", "219px", "218px", "218px", "218px", "217px", "217px", "217px", "217px", "216px", "216px", "216px", "215px", "215px", "215px", "214px", "214px", "214px", "213px", "213px", "213px", "212px", "212px", "212px", "211px", "211px", "211px", "210px", "210px", "210px", "209px", "209px", "209px", "208px", "208px", "208px", "207px", "207px", "207px", "206px", "206px", "206px", "206px", "205px", "205px", "205px", "204px", "204px", "204px", "203px", "203px", "203px", "202px", "202px", "202px", "201px", "201px", "201px", "200px", "200px", "200px", "199px", "199px", "199px", "198px", "198px", "198px", "197px", "197px", "197px", "196px", "196px", "196px", "196px");
+    else
+        document.MM_Time[0][0].values[2] = new Array(228,227,227,227,226,226,226,225,225,225,224,224,224,223,223,223,222,222,222,221,221,221,220,220,220,219,219,219,218,218,218,217,217,217,217,216,216,216,215,215,215,214,214,214,213,213,213,212,212,212,211,211,211,210,210,210,209,209,209,208,208,208,207,207,207,206,206,206,206,205,205,205,204,204,204,203,203,203,202,202,202,201,201,201,200,200,200,199,199,199,198,198,198,197,197,197,196,196,196,196);
+    document.MM_Time[0][0].values[2].prop = "width";
+    if (!ns4)
+        document.MM_Time[0][0].values[2].prop2 = "style";
+    document.MM_Time[0][1] = new String("behavior");
+    document.MM_Time[0][1].frame = 61;
+    document.MM_Time[0][1].value = "MM_timelineGoto('Timeline1','1')";
+    document.MM_Time[0].lastFrame = 100;
+    for (i=0; i<document.MM_Time.length; i++) {
+        document.MM_Time[i].ID = null;
+        document.MM_Time[i].curFrame = 0;
+        document.MM_Time[i].delay = 1000/document.MM_Time[i].fps;
+    }
+}
+//-->
+</script>
+</head>
+
+<body onLoad="MM_timelinePlay('Timeline1');">
+<table width="760" height="90" border="0" align="center" cellpadding="0" cellspacing="0" background="../c/temp/line.gif">
+  <tr>
+    <td width="800" height="90" background="../images/logo1.gif"><div align="center" class="style1">
+      <div align="left" class="style2">计算机操作系统<a name="top"></a></div>
+    </div></td>
+  </tr>
+</table>
+
+<table width="760" height="24" border="0" align="center" cellpadding="1" cellspacing="0" background="../c/temp/line.gif">
+  <tr bgcolor="#D3E7FF">
+    <td height="24" class="style4">当前位置：上机实验</td>
+  </tr>
+</table>
+<table width="760" border="0" align="center" background="../images/line.gif">
+  <tr>
+    <td width="24" height="143" valign="top" bordercolor="#0000FF"><p>&nbsp;</p>    </td>
+    <td width="726" valign="top"><div align="left" class="text">
+        <div align="center" class="style3"><strong>共享内存</strong> </div>
+      </div>
+      <p align="left" class="text">&nbsp;&nbsp;&nbsp; 进程能够通过共享虚地址空间的若干部分，然后对存储在共享存储区中的数据进行读和写来直接地彼此通信。共享内存的好处在于为通信进程提供了直接通信的手段，使得通信进程可以直接访问彼此的某些虚拟空间。这既减少了数据流动所带来的硬软件开销（例如缓冲区及其管理等），又使得彼此的通信不仅仅局限于数据的发送与接收，而且可以互相操作彼此的某些虚存区。操纵共享内存区的系统调用类似于消息队列机制，共有四个系统调用，它们是： </p>
+            <div align="left" class="style3" style="font-weight: bold; color: #0000FF">1、创建或获得一块共享内存区域：</div>
+      <p align="left" class="text"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int</strong> shmid=shmget（<strong>key_t</strong> key, <strong>size_t</strong> size, <strong>int </strong>flag）； </p>
+      <p align="left" class="text">&nbsp;&nbsp;&nbsp; 其中，key是用户指定的共享区号，size是共享存储区的长度，而flag则与msgget中的flag含义相同。</p>
+            <div align="left" style="color: #0000FF; font-weight: bold">2、进程使用系统调用shmat将一共享存储区附接到它的虚地址空间去：</div>
+      <p align="left" class="text"><strong><strong>&nbsp;&nbsp;&nbsp;&nbsp; </strong>&nbsp; void</strong> *virtaddr=shmat（<strong>int</strong> shmid, <strong>const void</strong> *addr, <strong>int </strong>flag）;</p>
+      <p align="left" class="text">&nbsp;&nbsp;&nbsp; 其中shmid是由先前的系统调用shmget返回的、用来识别某共享存储区；addr是用户想要使共享存储区附接的虚地址，当addr等于零时，系统自动选择适当地址进行附接（缺省）；flag规定对此区是否是只读的，以及内核是否应对用户规定的地址做舍入操作。返回值viraddr是内核将该内享存储区附接的虚地址。</p>
+            <div align="left" style="color: #0000FF; font-weight: bold">3、进程可以使用下面的调用把共享的内存区域和它自己的地址空间分离开来。</div>
+      <p align="left" class="text"><strong><strong>&nbsp;&nbsp;&nbsp;&nbsp; </strong>&nbsp; int</strong> Shmdt（<strong>const void</strong> *addr）;</p>
+      <p align="left" class="text"><strong>&nbsp;&nbsp;&nbsp;&nbsp; </strong>为了完全的释放共享的内存区域，进程必须使用带有IPC_RMID命令的shmctl调用。它标志要释放内存区域，当所有的进程都把这个共享内存区域同自己的地址分离后，这个共享内存区域将被释放。内核记录和共享内存联系的进程的数目。一旦共享内存区域被标志为释放，新的进程就不能再和它连接。如果共享内存区域不是显式地删除，内核仍然会保留它，而不管是否还有进程与它连接。某些应用可能需要这些特性。进程可以在共享内存区域放入一些数据，然后终止。过一段时间后，另一个和它有互相操作关系的进程能使用相同的键值连接到共享内存区域，并读取其中的数据。</p>
+            <div align="left" style="font-weight: bold; color: #0000FF">4、进程使用系统调用shmctl来查询某共享存储区的状态和设置有关的参数：</div>
+      <p align="left" class="text"><strong><strong>&nbsp;&nbsp;&nbsp;&nbsp; </strong>&nbsp; int</strong> shmctl（<strong>int</strong> shmid, <strong>int</strong> cmd, <strong>struct shmid_ds</strong> shmstatbuf）;</p>
+      <p align="left" class="text"><strong>&nbsp;&nbsp;&nbsp;&nbsp; </strong>其中shmid标识共享存储区表项；cmd规定操作的类型，取值范围为{IPC_ STAT，IPC_SET，IPC_RMID}；而shmstatbuf是一个用户数据结构的地址，这个用户数据结构中含有该共享存储区的状态信息。</p>
+            <div align="left" class="text"><strong>&nbsp;&nbsp;&nbsp;&nbsp; </strong>共享内存提供了一种快速的灵活的机制，允许不用拷贝的方法或是使用系统调用就可以共享大量的数据。它的主要局限性就是它不能提供同步。如果两个进程企图修改相同的共享内存区域，内核不能串行化这些操作，因此写的数据可能任意地互相混合。使用共享内存的进程必须设计它们自己的同步协议。它们通常使用像信号量的原语。这些原语包括一个或多个系统调用，这就对共享内存的性能加上了一些额外的开销。 </div>      <p align="center" class="text"><a href="#top"></a><a href="#top"></a><a href="msg.htm"><img src="../images/Prev.gif" width="60" height="20" border="0"></a>&nbsp; <a href="#top"><img src="../images/GoTop.gif" width="60" height="20" border="0"></a>&nbsp;  </p>    </td>
+  </tr>
+  <tr>
+    <td height="92" colspan="2" valign="top">      <hr width="750" size="1" noshade class="style3">      
+      <p align="center" class="style9">Email:<a href="mailto:rong_xiao@sina.com">rong_xiao@sina.com</a></p>
+    <p align="center" class="style21 style8 style3">建议分辨率：800*600</p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>
