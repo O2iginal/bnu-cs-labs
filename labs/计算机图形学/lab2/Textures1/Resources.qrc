@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>shaders/shader.frag</file>
+        <file>shaders/shader.vert</file>
+        <file>images/BNU_logo_blue.png</file>
+        <file>images/face.png</file>
+        <file>images/fedora.png</file>
+        <file>images/nvidia.png</file>
+        <file>images/brick.jpg</file>
+    </qresource>
+</RCC>

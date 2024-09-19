@@ -1,0 +1,42 @@
+<RCC>
+    <qresource prefix="/">
+        <file>shaders/sphere-fragment.glsl</file>
+        <file>shaders/sphere-vertex.glsl</file>
+        <file>shaders/skybox-fragment.glsl</file>
+        <file>shaders/skybox-vertex.glsl</file>
+        <file>images/skybox/bk.jpg</file>
+        <file>images/skybox/dn.jpg</file>
+        <file>images/skybox/ft.jpg</file>
+        <file>images/skybox/lf.jpg</file>
+        <file>images/skybox/rt.jpg</file>
+        <file>images/skybox/up.jpg</file>
+        <file>images/universe/back.png</file>
+        <file>images/universe/bottom.png</file>
+        <file>images/universe/front.png</file>
+        <file>images/universe/left.png</file>
+        <file>images/universe/right.png</file>
+        <file>images/universe/top.png</file>
+        <file>images/planets/Earth.jpg</file>
+        <file>images/planets/Jupiter.jpg</file>
+        <file>images/planets/Mars.jpg</file>
+        <file>images/planets/Mercury.jpg</file>
+        <file>images/planets/Moon.jpg</file>
+        <file>images/planets/Neptune.jpg</file>
+        <file>images/planets/Pluto.jpg</file>
+        <file>images/planets/Saturn.jpg</file>
+        <file>images/planets/Sun.jpg</file>
+        <file>images/planets/Uranus.jpg</file>
+        <file>images/planets/Venus.jpg</file>
+        <file>images/old/Earth.tga</file>
+        <file>images/old/Jupiter.tga</file>
+        <file>images/old/Mars.tga</file>
+        <file>images/old/Mercury.tga</file>
+        <file>images/old/Moon.tga</file>
+        <file>images/old/Neptune.tga</file>
+        <file>images/old/Pluto.tga</file>
+        <file>images/old/Saturn.tga</file>
+        <file>images/old/Sun.tga</file>
+        <file>images/old/Uranus.tga</file>
+        <file>images/old/Venus.tga</file>
+    </qresource>
+</RCC>

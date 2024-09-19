@@ -1,0 +1,62 @@
+# 
+# Wavefront material file
+# Converted by 3D Exploration 1.833
+# XDimension Software, LLC
+# http://www.xdsoft.com/explorer/
+# 
+newmtl Material__1
+	 Ka 0 0 0
+	 Kd 0.752941 0.752941 0.752941
+	 Ks 0 0 0
+	 illum 2
+	 Ns 5
+	 map_Kd Texture/face.jpg
+newmtl Material__2
+	 Ka 0 0 0
+	 Kd 0.752941 0.752941 0.752941
+	 Ks 0 0 0
+	 illum 2
+	 Ns 5
+	 map_Kd Texture/hair.jpg
+newmtl Material__3
+	 Ka 0 0 0
+	 Kd 0.752941 0.752941 0.752941
+	 Ks 0 0 0
+	 illum 2
+	 Ns 5
+	 map_Kd Texture/face.jpg
+newmtl Material__4
+	 Ka 0 0 0
+	 Kd 0.8 0.8 0.8
+	 Ks 0 0 0
+	 illum 2
+	 Ns 5
+	 map_Kd Texture/clothes.jpg
+newmtl Material__5
+	 Ka 0 0 0
+	 Kd 0.752941 0.752941 0.752941
+	 Ks 0 0 0
+	 illum 2
+	 Ns 5
+	 map_Kd Texture/clothes.jpg
+newmtl Material__6
+	 Ka 0 0 0
+	 Kd 0.752941 0.752941 0.752941
+	 Ks 0 0 0
+	 illum 2
+	 Ns 5
+	 map_Kd Texture/hair.jpg
+newmtl Material__8
+	 Ka 0 0 0
+	 Kd 1 1 1
+	 Ks 0 0 0
+	 illum 2
+	 Ns 15.3
+	 map_Kd Texture/expression.png
+newmtl Material__7
+	 Ka 0 0 0
+	 Kd 0.752941 0.752941 0.752941
+	 Ks 0 0 0
+	 illum 2
+	 Ns 5
+	 map_Kd Texture/cloak2.jpg

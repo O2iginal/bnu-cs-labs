@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>models/StanfordDragon/dragon.mtl</file>
+        <file>models/StanfordDragon/dragon.obj</file>
+        <file>shaders/fragment.glsl</file>
+        <file>shaders/geometry.glsl</file>
+        <file>shaders/vertex.glsl</file>
+        <file>models/paimeng/paimeng.mtl</file>
+        <file>models/paimeng/paimeng.obj</file>
+        <file>models/paimeng/Texture/mc3.png</file>
+        <file>models/paimeng/Texture/toon.png</file>
+        <file>models/paimeng/Texture/cloak.png</file>
+        <file>models/paimeng/Texture/cloak2.jpg</file>
+        <file>models/paimeng/Texture/clothes.jpg</file>
+        <file>models/paimeng/Texture/expression.png</file>
+        <file>models/paimeng/Texture/face.jpg</file>
+        <file>models/paimeng/Texture/hair.jpg</file>
+    </qresource>
+</RCC>

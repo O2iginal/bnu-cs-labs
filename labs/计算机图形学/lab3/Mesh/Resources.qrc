@@ -1,0 +1,33 @@
+<RCC>
+    <qresource prefix="/">
+        <file>shaders/shader.frag</file>
+        <file>shaders/shader.vert</file>
+        <file>models/StanfordDragon/dragon.mtl</file>
+        <file>models/StanfordDragon/dragon.obj</file>
+        <file>models/LibertyStatue/LibertStatue.mtl</file>
+        <file>models/LibertyStatue/LibertStatue.obj</file>
+        <file>models/LibertyStatue/Liberty-DecorazioniMarmo-2.bmp</file>
+        <file>models/LibertyStatue/Liberty-GreenBronze-1.bmp</file>
+        <file>models/LibertyStatue/Liberty-MattoniBasamento-1.bmp</file>
+        <file>models/LibertyStatue/Liberty-Pavimentazione-1.bmp</file>
+        <file>models/LibertyStatue/Liberty-PortaBronzo-1.bmp</file>
+        <file>models/Cube/polyCubeQuads.obj</file>
+        <file>models/Cube/polyCubeTris.obj</file>
+        <file>models/Iris/simpleIris_quad.obj</file>
+        <file>models/Iris/simpleIris_tri.obj</file>
+        <file>models/Cow/cow.obj</file>
+        <file>models/Pumpkin/pumpkin.obj</file>
+        <file>models/TeddyBear/teddy.obj</file>
+        <file>models/UtahTeapot/teapot_lowpoly.obj</file>
+        <file>models/paimeng/paimeng.mtl</file>
+        <file>models/paimeng/paimeng.obj</file>
+        <file>models/paimeng/Texture/mc3.png</file>
+        <file>models/paimeng/Texture/toon.png</file>
+        <file>models/paimeng/Texture/cloak.png</file>
+        <file>models/paimeng/Texture/cloak2.jpg</file>
+        <file>models/paimeng/Texture/clothes.jpg</file>
+        <file>models/paimeng/Texture/expression.png</file>
+        <file>models/paimeng/Texture/face.jpg</file>
+        <file>models/paimeng/Texture/hair.jpg</file>
+    </qresource>
+</RCC>
